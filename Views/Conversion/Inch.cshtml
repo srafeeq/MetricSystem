@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Inch Conversion";
+}
+
+<h2 class="text-center text-primary mb-4">Inch to Centimeter</h2>
+
+<div class="container">
+    <form asp-action="Inch" method="post">
+        <div class="mb-3">
+            <label for="inch" class="form-label">Enter Inches</label>
+            <input type="number" id="inch" name="inch" class="form-control" placeholder="Enter Inch value" />
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Convert</button>
+        <button type="reset" class="btn btn-outline-secondary">Clear</button>
+    </form>
+
+    @if (ViewBag.Result != null)
+    {
+        <div class="alert alert-success mt-3">@ViewBag.Result</div>
+    }
+</div>

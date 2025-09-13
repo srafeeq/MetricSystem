@@ -1,0 +1,35 @@
+@model FahrenheitModel
+@{
+    ViewData["Title"] = "Fahrenheit Conversion";
+}
+
+<div class="card p-4 shadow">
+    <h3 class="card-title mb-3">Convert Fahrenheit to Celsius</h3>
+
+    <form asp-action="Fahrenheit" method="post">
+        <div class="mb-3">
+            <label asp-for="Fahrenheit" class="form-label"></label>
+            <input asp-for="Fahrenheit" class="form-control" />
+            <span asp-validation-for="Fahrenheit" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Celsius" class="form-label"></label>
+            <input asp-for="Celsius" class="form-control" readonly />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Convert</button>
+        <button type="reset" class="btn btn-secondary">Clear</button>
+    </form>
+
+    @if (Model?.Celsius != null)
+    {
+        <div class="alert alert-success mt-3">
+            <strong>Result:</strong> @Model.Fahrenheit °F = @Model.Celsius °C
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

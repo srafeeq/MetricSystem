@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Yard Conversion";
+}
+
+<h2 class="text-center text-primary mb-4">Yard to Meter</h2>
+
+<div class="container">
+    <form asp-action="Yard" method="post">
+        <div class="mb-3">
+            <label for="yard" class="form-label">Enter Yards</label>
+            <input type="number" id="yard" name="yard" class="form-control" placeholder="Enter Yard value" />
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Convert</button>
+        <button type="reset" class="btn btn-outline-secondary">Clear</button>
+    </form>
+
+    @if (ViewBag.Result != null)
+    {
+        <div class="alert alert-success mt-3">@ViewBag.Result</div>
+    }
+</div>
