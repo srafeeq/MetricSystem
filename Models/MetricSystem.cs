@@ -10,6 +10,6 @@ namespace MetricSystem.Models
         public double Fahrenheit { get; set; }
 
         [Display(Name = "Celsius Value")]  
-        public double? Celsius { get; set; } 
+        public double Celsius { get; set; } 
     }
 }
